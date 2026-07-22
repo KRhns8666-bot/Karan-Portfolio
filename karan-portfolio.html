@@ -92,6 +92,7 @@ section{position:relative;z-index:20;padding:96px 24px;max-width:1180px;margin:0
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px}
 .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;padding:5px 9px;background:rgba(136,170,255,.08);
   border:1px solid rgba(136,170,255,.2);color:rgba(255,255,255,.65)}
+.card .links{display:flex;flex-wrap:wrap;gap:16px}
 .card a.link{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--acid);text-decoration:none}
 .card a.link:hover{text-decoration:underline}
 
@@ -108,6 +109,16 @@ section{position:relative;z-index:20;padding:96px 24px;max-width:1180px;margin:0
 .row h3{font-family:var(--sans);font-weight:700;font-size:16px;margin-bottom:6px}
 .row p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.58)}
 @media(max-width:640px){.row{grid-template-columns:1fr;gap:8px}}
+
+
+/* CERTS */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:1px;background:rgba(255,255,255,.08)}
+.cert{background:var(--bg);padding:24px 22px;display:flex;flex-direction:column;gap:8px}
+.cert .cn{font-family:var(--sans);font-weight:700;font-size:14.5px;line-height:1.35}
+.cert .cs{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:rgba(255,255,255,.45)}
+.cert .badge{align-self:flex-start;font-family:var(--mono);font-size:9px;letter-spacing:.16em;padding:3px 8px;
+  border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55)}
+.cert .badge.done{color:var(--acid);border-color:var(--acid)}
 
 /* FOOTER */
 footer{position:relative;z-index:20;padding:70px 24px 40px;border-top:1px solid rgba(255,255,255,.08);text-align:center}
@@ -191,7 +202,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <b>Karan</b><div class="mark">✦</div>
   </div>
   <nav>
-    <a href="#work">WORK</a><a href="#proof">PROOF</a><a href="#track">TRACK</a>
+    <a href="#work">WORK</a><a href="#proof">PROOF</a><a href="#track">TRACK</a><a href="#certs">CERTS</a>
   </nav>
   <button class="cta" onclick="openDrawer()">Get in touch</button>
 </header>
@@ -200,12 +211,12 @@ html,body{max-width:100%;overflow-x:hidden}
   <!-- HERO -->
   <div class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">SINGAPORE · CUSTOMER SUCCESS · CYBERSECURITY</p>
+      <p class="eyebrow">CUSTOMER SUCCESS · SERVICE DELIVERY · INCIDENT MGMT · ENTERPRISE SALES</p>
       <h1>
         <span class="stroke">I RUN ACCOUNTS AND</span>
         <span class="solid" id="rotator">BUILD</span>
       </h1>
-      <p class="bio">I'm Karan Rodrigues — 15 years of enterprise Customer Success across APAC, most recently running Prisma Access and SASE for BFSI, government and Malaysian enterprise accounts. Off the clock I build the things below: cyber awareness content, automation systems, and interactive tools that teach people not to get phished.</p>
+      <p class="bio">I'm Karan Rodrigues — 15+ years across APAC spanning Customer Success, Service Delivery, Incident Management and Enterprise Sales. At Palo Alto Networks I specialized across Prisma Access, endpoint security, cloud security and Zero Trust — managing $10M ARR for Tier-1 BFSI, Singapore Government and Malaysian enterprise. As Incident Response Lead, I own critical incident management for high-severity, regulated environments (MAS TRM, IM8). Alongside this, I run a cyber-awareness and education program focused on scam prevention and changing everyday online habits. Off the clock I build the things below.</p>
     </div>
 
     <div class="portrait">
@@ -224,10 +235,10 @@ html,body{max-width:100%;overflow-x:hidden}
   <section id="proof">
     <div class="sec-head reveal"><h2>By the numbers</h2><p>SNAPSHOT</p></div>
     <div class="proof reveal">
-      <div><b>15</b><span>YEARS APAC ENTERPRISE</span></div>
+      <div><b>15+</b><span>YEARS APAC ENTERPRISE</span></div>
+      <div><b>$10M</b><span>ARR MANAGED</span></div>
+      <div><b>95%+</b><span>PRISMA ACCESS ADOPTION</span></div>
       <div><b>9</b><span>SHIPPED SIDE PROJECTS</span></div>
-      <div><b>4</b><span>AUTOMATION MODULES LIVE</span></div>
-      <div><b>3</b><span>MARKETS: SG / MY / IN</span></div>
     </div>
   </section>
 
@@ -241,10 +252,26 @@ html,body{max-width:100%;overflow-x:hidden}
   <section id="track">
     <div class="sec-head reveal"><h2>Track record</h2><p>PROFESSIONAL</p></div>
     <div class="track reveal">
-      <div class="row"><div class="when">2017 — 2026</div><div><h3>Customer Success Manager, Network Security — Palo Alto Networks</h3><p>Owned Prisma Access and SASE adoption across BFSI, Singapore Government and Malaysian enterprise accounts. Renewals, escalation management, executive stakeholder alignment and technical onboarding for a nine-year run.</p></div></div>
-      <div class="row"><div class="when">EARLIER</div><div><h3>Business Development Manager, IT — GFC Advice Singapore</h3><p>Enterprise IT pipeline development across the Singapore market.</p></div></div>
-      <div class="row"><div class="when">EARLIER</div><div><h3>Senior Sales Executive — Marcus Evans Singapore</h3><p>C-level solution selling into APAC enterprise accounts.</p></div></div>
-      <div class="row"><div class="when">EDUCATION</div><div><h3>MBA — University of Wales / MDIS Singapore · B.Com — University of Mumbai</h3><p>CISM candidate, exam targeted for 2026.</p></div></div>
+      <div class="row"><div class="when">JAN 2021 — MAY 2026</div><div><h3>Network Security Customer Success Manager &amp; Incident Response Lead — Palo Alto Networks</h3><p>Specialized across the Palo Alto stack — Prisma Access, endpoint security, cloud security and Zero Trust (ZTNA) — managing $6M ARR for Tier-1 BFSI and enterprise accounts at 95%+ adoption. As Incident Response Lead, owned end-to-end critical incident management for enterprise customers across APAC, partnering with Global Engineering on C-suite incidents and product roadmap fixes. Interim Team Lead for one year; designed an RCA framework adopted as the APAC CSM regional standard.</p></div></div>
+      <div class="row"><div class="when">OCT 2017 — JAN 2021</div><div><h3>Strategic Renewals Manager — Palo Alto Networks</h3><p>Managed $10M ARR across Singapore Government, Malaysian enterprise, Philippines and broader APAC — 100% renewal predictability through structured engagement and proactive risk management.</p></div></div>
+      <div class="row"><div class="when">AUG 2015 — MAR 2017</div><div><h3>Business Development Manager, IT — GFC Advice Singapore</h3><p>New customer acquisition and onboarding for financial-services clients across APAC; $5M account book with a focus on retention and portfolio growth.</p></div></div>
+      <div class="row"><div class="when">JUL 2014 — AUG 2015</div><div><h3>Senior Sales Executive — Marcus Evans Singapore</h3><p>Cybersecurity event sales across Singapore and Hong Kong; liaised with CIOs and IT Heads on new business and retention across a $1.5M portfolio.</p></div></div>
+      <div class="row"><div class="when">NOV 2011 — FEB 2013</div><div><h3>Senior Executive, Marketing &amp; Sales — Ahlers Forwarding &amp; Logistics</h3><p>Owned Sea/Air freight customer acquisition, led West India territory growth and ran integrated regional marketing. Mumbai, India.</p></div></div>
+      <div class="row"><div class="when">DEC 2009 — OCT 2011</div><div><h3>IT Development Senior Officer, Network Security — Maersk Global Service Centres</h3><p>Designed cybersecurity architecture for Maersk's global network infrastructure and enforced enterprise security and risk-management standards. India.</p></div></div>
+      <div class="row"><div class="when">2013 — 2014</div><div><h3>MBA — Business &amp; Information Technology</h3><p>University of Wales, UK · MDIS Singapore.</p></div></div>
+      <div class="row"><div class="when">2004 — 2007</div><div><h3>Bachelor of Commerce — Business Administration &amp; Strategy</h3><p>University of Mumbai.</p></div></div>
+    </div>
+    </div>
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="sec-head reveal"><h2>Certifications</h2><p>CREDENTIALS</p></div>
+    <div class="certs reveal">
+      <div class="cert"><span class="badge">TARGET AUG 2026</span><span class="cn">Certified Information Security Manager (CISM)</span><span class="cs">ISACA</span></div>
+      <div class="cert"><span class="badge done">COMPLETED</span><span class="cn">Certified in Cybersecurity (CC)</span><span class="cs">ISC2</span></div>
+      <div class="cert"><span class="badge done">COMPLETED</span><span class="cn">Professional Certificate — Artificial Intelligence</span><span class="cs">Google</span></div>
+      <div class="cert"><span class="badge done">COMPLETED</span><span class="cn">Foundations in Cybersecurity</span><span class="cs">Google</span></div>
+      <div class="cert"><span class="badge done">COMPLETED</span><span class="cn">Certified Cloud Practitioner</span><span class="cs">AWS</span></div>
+      <div class="cert"><span class="badge done">COMPLETED</span><span class="cn">Certified Customer Success Manager (CCSM) L1</span><span class="cs">SuccessCoach</span></div>
     </div>
   </section>
 </main>
@@ -280,8 +307,8 @@ html,body{max-width:100%;overflow-x:hidden}
 <script>
 /* ---------- PROJECTS: edit this array to add new work ---------- */
 const PROJECTS = [
-  {t:"Kai Cyber", s:"live", y:"2026", d:"Neon-noir cybersecurity awareness channel fronted by Kai Tan, an AI-generated host. Short-form vertical episodes on phishing, pig-butchering scams and cyberbullying, aimed at Singapore consumers.", tags:["Higgsfield","ElevenLabs","CapCut","Brand"], link:""},
-  {t:"Cyber-Security 2050", s:"live", y:"2026", d:"Interactive awareness site: Spot the Phish, a password playground, a breach cascade simulation and an SME self-assessment. Built to make security training something people finish.", tags:["HTML/JS","GitHub Pages","UX"], link:"https://github.com/krhns8666-bot"},
+  {t:"Kai Cyber", s:"live", y:"2026", d:"A scam-awareness and online-safety education program. Short-form episodes break down real threats — phishing, pig-butchering scams, cyberbullying — and teach people the everyday habits that keep them safe online. Paired with an interactive scam-check trainer and a browser game that turn awareness into practice.", tags:["Scam Awareness","Education","Higgsfield","ElevenLabs","CapCut"], links:[{label:"YOUTUBE",url:"https://www.youtube.com/@KaiChenCyber"},{label:"SCAM APP",url:"https://kai-check.higgsfield.app"},{label:"GAME",url:"https://mighty-brick-384.higgsfield.app"}]},
+  {t:"Cyber-Security 2050", s:"live", y:"2026", d:"Interactive awareness site: Spot the Phish, a password playground, a breach cascade simulation and an SME self-assessment. Built to make security training something people finish.", tags:["HTML/JS","GitHub Pages","UX"], link:"https://krhns8666-bot.github.io/Cyber-Security-2050/#position"},
   {t:"News Hub", s:"local", y:"2026", d:"Personal cyber-news aggregator — pulls threat intel and industry headlines into one filtered feed so the morning scan takes minutes, not an hour.", tags:["Web App","Aggregation","Automation"], link:"http://localhost:3457/news-hub.html"},
   {t:"KaranOS", s:"building", y:"2026", d:"Personal operating system on n8n — four modules covering job pipeline, content production, digital products and CISM study. Claude API in the loop for drafting and triage.", tags:["n8n","Claude API","Automation"], link:""},
   {t:"Content Factory", s:"live", y:"2026", d:"Telegram-triggered pipeline that turns a one-line prompt into a scripted, voiced and captioned short. Cuts production from hours to minutes.", tags:["n8n","Telegram","Claude API"], link:""},
@@ -291,14 +318,19 @@ const PROJECTS = [
   {t:"Resume System", s:"live", y:"2026", d:"Programmatic resume generator in Node.js and docx — navy, teal and gold, two pages, regenerated per application from a single master profile.", tags:["Node.js","docx","Design"], link:""}
 ];
 const grid = document.getElementById('grid');
-grid.innerHTML = PROJECTS.map(p => `
+grid.innerHTML = PROJECTS.map(p => {
+  let links = p.links || (p.link ? [{label:'VIEW',url:p.link}] : []);
+  const linkHtml = links.length
+    ? `<div class="links">${links.map(l=>`<a class="link" href="${l.url}" target="_blank" rel="noopener">${l.label} →</a>`).join('')}</div>`
+    : '';
+  return `
   <article class="card reveal">
     <div class="card-top"><span>${p.y}</span><span class="status ${p.s}">${p.s.toUpperCase()}</span></div>
     <h3 class="card-title">${p.t}</h3>
     <p>${p.d}</p>
-    ${p.link?`<a class="link" href="${p.link}" target="_blank" rel="noopener">VIEW →</a>`:''}
+    ${linkHtml}
     <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-  </article>`).join('');
+  </article>`;}).join('');
 
 /* ---------- scramble rotator ---------- */
 (function(){
