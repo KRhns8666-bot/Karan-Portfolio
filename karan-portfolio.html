@@ -6,6 +6,23 @@
 <!-- VERSION: LIVE-BUILDING-SPLIT-v2 -->
 <title>Karan Rodrigues — Customer Success & Cyber Builder</title>
 <meta name="description" content="Karan Rodrigues — 15+ years enterprise Customer Success, Service Delivery, Incident Management and Enterprise Sales across APAC. Builder of cyber-awareness tools and automation.">
+
+<!-- ===== LINK PREVIEW / SOCIAL SHARE CARD ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Karan Rodrigues">
+<meta property="og:title" content="Karan Rodrigues — Customer Success &amp; Cyber Builder">
+<meta property="og:description" content="15+ years enterprise Customer Success, Service Delivery, Incident Management and Enterprise Sales across APAC. Builder of cyber-awareness tools and automation.">
+<meta property="og:url" content="https://krhns8666-bot.github.io/Karan-Portfolio/karan-portfolio.html">
+<meta property="og:image" content="https://krhns8666-bot.github.io/Karan-Portfolio/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Karan Rodrigues — 15+ years APAC enterprise and cyber.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Karan Rodrigues — Customer Success &amp; Cyber Builder">
+<meta name="twitter:description" content="15+ years enterprise Customer Success, Service Delivery, Incident Management and Enterprise Sales across APAC.">
+<meta name="twitter:image" content="https://krhns8666-bot.github.io/Karan-Portfolio/og-image.png">
+<!-- ===== END LINK PREVIEW ===== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -196,6 +213,7 @@ footer .big{font-family:var(--disp);font-size:clamp(34px,6vw,64px);line-height:1
     <div class="nav-links">
       <a href="#work" class="hideM">WORK</a>
       <a href="#track" class="hideM">TRACK</a>
+      <a href="#education" class="hideM">EDU</a>
       <a href="#certs" class="hideM">CERTS</a>
       <a href="#" onclick="openDrawer();return false" style="border:2px solid var(--ink);background:var(--c4);box-shadow:3px 3px 0 var(--ink)">GET_IN_TOUCH</a>
     </div>
@@ -266,7 +284,15 @@ footer .big{font-family:var(--disp);font-size:clamp(34px,6vw,64px);line-height:1
       <div class="row"><div class="when">JUL 2014 — AUG 2015</div><div><h3>Senior Sales Executive — Marcus Evans Singapore</h3><p>Cybersecurity event sales across Singapore and Hong Kong; liaised with CIOs and IT Heads on new business and retention across a $1.5M portfolio.</p></div></div>
       <div class="row"><div class="when">NOV 2011 — FEB 2013</div><div><h3>Senior Executive, Marketing &amp; Sales — Ahlers Forwarding &amp; Logistics</h3><p>Owned Sea/Air freight customer acquisition, led West India territory growth and ran integrated regional marketing. Mumbai, India.</p></div></div>
       <div class="row"><div class="when">DEC 2009 — OCT 2011</div><div><h3>IT Development Senior Officer, Network Security — Maersk Global Service Centres</h3><p>Designed cybersecurity architecture for Maersk's global network infrastructure and enforced enterprise security and risk-management standards. India.</p></div></div>
-      <div class="row"><div class="when">EDUCATION</div><div><h3>MBA, IT &amp; Business — University of Wales / MDIS Singapore · B.Com — University of Mumbai</h3><p>Certified Information Security Manager (CISM) — target August 2026.</p></div></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="blk container" id="education">
+    <span class="label reveal" style="--acc:var(--c1)"># EDUCATION</span>
+    <div class="certs reveal">
+      <div class="cert"><span class="b done">POSTGRADUATE</span><span class="cn">MBA — Information Technology &amp; Business</span><span class="cs">University of Wales · MDIS Singapore</span></div>
+      <div class="cert"><span class="b done">UNDERGRADUATE</span><span class="cn">Bachelor of Commerce (B.Com)</span><span class="cs">University of Mumbai</span></div>
     </div>
   </section>
 
@@ -274,7 +300,7 @@ footer .big{font-family:var(--disp);font-size:clamp(34px,6vw,64px);line-height:1
   <section class="blk container" id="certs">
     <span class="label reveal" style="--acc:var(--c4)"># CERTIFICATIONS</span>
     <div class="certs reveal">
-      <div class="cert"><span class="b">TARGET AUG 2026</span><span class="cn">Certified Information Security Manager (CISM)</span><span class="cs">ISACA</span></div>
+      <div class="cert"><span class="b done">COMPLETED</span><span class="cn">Certified Information Security Manager (CISM)</span><span class="cs">ISACA</span></div>
       <div class="cert"><span class="b done">COMPLETED</span><span class="cn">Certified in Cybersecurity (CC)</span><span class="cs">ISC2</span></div>
       <div class="cert"><span class="b done">COMPLETED</span><span class="cn">Professional Certificate — Artificial Intelligence</span><span class="cs">Google</span></div>
       <div class="cert"><span class="b done">COMPLETED</span><span class="cn">Foundations in Cybersecurity</span><span class="cs">Google</span></div>
@@ -323,7 +349,7 @@ const PROJECTS = [
   {t:"Scam Atlas — APAC Scam Intelligence Platform", s:"live", y:"2026", d:"A live scam-intelligence platform covering Asia-Pacific: what scams are hitting real people right now, and how to see them coming. A cinematic scroll-driven intro leads into country-by-country data for 8 APAC markets (Singapore, India, Japan, Australia, South Korea, Malaysia, Thailand, New Zealand), sourced entirely from official police, CERT and anti-scam-centre publications. A draggable 3D globe drives a live threat radar with hotspot rankings and scam-mix analytics, alongside an in-browser checker that scores any pasted SMS or email against known fraud markers instantly.", tags:["Concept & Build","Data Research","3D Globe","APAC","Kai Chen Cyber"], link:"https://scamatlas.kimi.page/?v=2"},
   {t:"Kai Cyber — The Six Problems", s:"live", y:"2026", d:"An essay-driven security site arguing that every breach traces back to six permanent problems: trust, identity, human error, asymmetry, economics and complexity. Six real case files, an animated breach-cascade demo showing one reused password compromising 24 systems, a Phish Lab test and a live APAC Scam Watch. One file, no dependencies.", tags:["HTML/JS","Interactive","Editorial","APAC"], link:"https://krhns8666-bot.github.io/Cyber-Security-2050/"},
   {t:"Prism — Multi-Source News Hub", s:"live", y:"2026", d:"A holistic news reader that pulls any RSS, Reddit or YouTube feed into one filtered stream, groups stories by source and country, and compares how outlets cover the same event. Includes a spoken briefing mode for hands-free catch-up.", tags:["Web App","RSS","Coverage Compare","TTS"], link:"https://krhns8666-bot.github.io/Prism-News/"},
-  {t:"KaranOS", s:"building", y:"2026", d:"Personal operating system on n8n — four modules covering job pipeline, content production, digital products and CISM study. Claude API in the loop for drafting and triage.", tags:["n8n","Claude API","Automation"], link:""},
+  {t:"KaranOS", s:"building", y:"2026", d:"Personal operating system on n8n — four modules covering job pipeline, content production, digital products and certification tracking. Claude API in the loop for drafting and triage.", tags:["n8n","Claude API","Automation"], link:""},
   {t:"Content Factory", s:"live", y:"2026", d:"Telegram-triggered pipeline that turns a one-line prompt into a scripted, voiced and captioned short. Cuts production from hours to minutes.", tags:["n8n","Telegram","Claude API"], link:""},
   {t:"AI Studio Experiments", s:"ongoing", y:"2026", d:"A running set of Google AI Studio builds — prompt-driven prototypes and small tools used to test what generative workflows can actually carry in production.", tags:["Google AI Studio","Gemini","Prototyping"], link:""},
   {t:"Suno Music", s:"live", y:"2026", d:"Original music written and produced with Suno, then distributed through DistroKid to Spotify and Apple Music.", tags:["Suno","DistroKid","Audio"], link:""}
