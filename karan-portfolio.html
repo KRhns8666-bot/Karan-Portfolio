@@ -335,6 +335,29 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 function openDrawer(){drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');}
+const PALETTE=['#00D3E0','#B4FF3A','#FF4D8D','#FFC700','#8B5CF6','#FF6B35'];
+const grid=document.getElementById('grid');
+grid.innerHTML=PROJECTS.map((p,i)=>{
+  const acc=PALETTE[i%PALETTE.length];
+  let links=p.links||(p.link?[{label:'VIEW',url:p.link}]:[]);
+  const linkHtml=links.length?`<div class="links">${links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} →</a>`).join('')}</div>`:'';
+  return `<article class="card reveal" style="--acc:${acc}">
+    <div class="card-top"><span class="card-year">${p.y}</span><span class="status ${p.s}">${p.s.toUpperCase()}</span></div>
+    <h3>${p.t}</h3><p>${p.d}</p>${linkHtml}
+    <div class="tags">${p.tags.map(t=>`<span class="t">${t}</span>`).join('')}</div>
+  </article>`;}).join('');
+
+(function(){const m=document.getElementById('mq');m.innerHTML=m.innerHTML.repeat(4);})();
+
+// rotating hero word
+(function(){const words=['CYBER','BUILD','SHIP'],el=document.getElementById('rot');let i=0;
+  setInterval(()=>{i=(i+1)%words.length;el.style.transform='rotate(2deg) scale(1.05)';
+    setTimeout(()=>{el.textContent=words[i];el.style.transform='rotate(-1.5deg) scale(1)';},120);},2600);})();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function openDrawer(){drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');}
 function closeDrawer(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');}
 addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 function sendMail(){const n=f_name.value||'',co=f_co.value||'',t=f_topic.value,m=f_msg.value||'';
