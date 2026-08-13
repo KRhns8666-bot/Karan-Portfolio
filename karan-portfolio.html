@@ -310,32 +310,7 @@ const PROJECTS = [
   {t:"Suno Music", s:"live", y:"2026", d:"Original music written and produced with Suno, then distributed through DistroKid to Spotify and Apple Music.", tags:["Suno","DistroKid","Audio"], link:""},
   {t:"Job Search Engine", s:"live", y:"2026", d:"Claude Code workflow with custom commands for scanning roles, analysing fit, tailoring the resume, writing outreach and tracking follow-ups against a live pipeline.", tags:["Claude Code","Node.js","docx"], link:""},
   {t:"Resume System", s:"live", y:"2026", d:"Programmatic resume generator in Node.js and docx — navy, teal and gold, two pages, regenerated per application from a single master profile.", tags:["Node.js","docx","Design"], link:""}
-];const PROJECTS = [
-  {t:"3D Antigravity Force Graph Visualizer", s:"live", y:"2026", d:"Interactive 3D force-directed graph rendering 500+ nodes at 60 FPS using Three.js and custom antigravity physics (1/r²). Features 4 gravity modes (Zero-G, Standard, Inverted, Radial), 3D drag & throw mechanics, node pinning, and real-time datasets including X (Twitter) Trending Topics, Open-Source Dependency Risk, Global Airport Routes, and Supply Chain Disruption Matrix.", tags:["Three.js","WebGL","3D Physics","X Trends","Interactive"], link:"https://krhns8666-bot.github.io/Karan-Portfolio/antigravity-graph/index.html"},
-  {t:"Kai Cyber", s:"live", y:"2026", d:"A scam-awareness and online-safety education program...",
-const PALETTE=['#00D3E0','#B4FF3A','#FF4D8D','#FFC700','#8B5CF6','#FF6B35'];
-const grid=document.getElementById('grid');
-grid.innerHTML=PROJECTS.map((p,i)=>{
-  const acc=PALETTE[i%PALETTE.length];
-  let links=p.links||(p.link?[{label:'VIEW',url:p.link}]:[]);
-  const linkHtml=links.length?`<div class="links">${links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} →</a>`).join('')}</div>`:'';
-  return `<article class="card reveal" style="--acc:${acc}">
-    <div class="card-top"><span class="card-year">${p.y}</span><span class="status ${p.s}">${p.s.toUpperCase()}</span></div>
-    <h3>${p.t}</h3><p>${p.d}</p>${linkHtml}
-    <div class="tags">${p.tags.map(t=>`<span class="t">${t}</span>`).join('')}</div>
-  </article>`;}).join('');
-
-(function(){const m=document.getElementById('mq');m.innerHTML=m.innerHTML.repeat(4);})();
-
-// rotating hero word
-(function(){const words=['CYBER','BUILD','SHIP'],el=document.getElementById('rot');let i=0;
-  setInterval(()=>{i=(i+1)%words.length;el.style.transform='rotate(2deg) scale(1.05)';
-    setTimeout(()=>{el.textContent=words[i];el.style.transform='rotate(-1.5deg) scale(1)';},120);},2600);})();
-
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-function openDrawer(){drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');}
+];
 const PALETTE=['#00D3E0','#B4FF3A','#FF4D8D','#FFC700','#8B5CF6','#FF6B35'];
 const grid=document.getElementById('grid');
 grid.innerHTML=PROJECTS.map((p,i)=>{
