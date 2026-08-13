@@ -3,6 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFC700">
+<!-- VERSION: LIVE-BUILDING-SPLIT-v2 -->
 <title>Karan Rodrigues — Customer Success & Cyber Builder</title>
 <meta name="description" content="Karan Rodrigues — 15+ years enterprise Customer Success, Service Delivery, Incident Management and Enterprise Sales across APAC. Builder of cyber-awareness tools and automation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,6 +96,14 @@ section.blk{padding:66px 0}
 .stat b{font-family:var(--disp);font-size:38px;display:block;line-height:1}
 .stat:nth-child(3) b,.stat:nth-child(3) span{color:var(--ink)}
 .stat span{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.05em;display:block;margin-top:10px}
+
+
+.subhead{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:13px;
+  letter-spacing:.05em;margin-bottom:20px}
+.subhead .dot{width:11px;height:11px;border:2px solid var(--ink);display:inline-block}
+.subhead .dot.live{background:var(--c2)}
+.subhead .dot.building{background:var(--c4)}
+.subcount{font-weight:400;color:#555;font-size:11px}
 
 /* PROJECTS */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:22px}
@@ -235,7 +244,16 @@ footer .big{font-family:var(--disp);font-size:clamp(34px,6vw,64px);line-height:1
   <!-- WORK -->
   <section class="blk container" id="work">
     <span class="label reveal" style="--acc:var(--c1)"># THINGS_I_BUILT</span>
-    <div class="grid" id="grid"></div>
+
+    <div class="subhead reveal">
+      <span class="dot live"></span> LIVE_NOW <span class="subcount" id="cnt-live"></span>
+    </div>
+    <div class="grid" id="grid-live"></div>
+
+    <div class="subhead reveal" style="margin-top:52px">
+      <span class="dot building"></span> BUILDING_NEXT <span class="subcount" id="cnt-building"></span>
+    </div>
+    <div class="grid" id="grid-building"></div>
   </section>
 
   <!-- TRACK -->
@@ -299,21 +317,19 @@ footer .big{font-family:var(--disp);font-size:clamp(34px,6vw,64px);line-height:1
 
 <script>
 const PROJECTS = [
-  {t:"3D Antigravity Force Graph Visualizer", s:"live", y:"2026", d:"Interactive 3D force-directed graph rendering 500+ nodes at 60 FPS using Three.js and custom antigravity physics. Features 4 gravity modes (Zero-G, Standard, Inverted, Radial), 3D drag and throw mechanics, node pinning, and real-time datasets including X (Twitter) Trending Topics, Open-Source Dependency Risk, Global Airport Routes, and Supply Chain Disruption Matrix.", tags:["Three.js","WebGL","3D Physics","X Trends","Interactive"], link:"https://krhns8666-bot.github.io/Karan-Portfolio/antigravity-graph/index.html"},
   {t:"Kai Cyber", s:"live", y:"2026", d:"A scam-awareness and online-safety education program. Short-form episodes break down real threats — phishing, pig-butchering scams, cyberbullying — and teach people the everyday habits that keep them safe online. Paired with an interactive scam-check trainer and a browser game that turn awareness into practice.", tags:["Scam Awareness","Education","Higgsfield","ElevenLabs","CapCut"], links:[{label:"WEBSITE",url:"https://kaicyber.org"},{label:"YOUTUBE",url:"https://www.youtube.com/@KaiChenCyber"},{label:"SCAM APP",url:"https://kai-check.higgsfield.app"},{label:"GAME",url:"https://mighty-brick-384.higgsfield.app"}]},
+  {t:"Kai Cyber — Family Guardian", s:"building", y:"2026", d:"An AI-powered scam-detection bot for non-technical family. Forward any suspicious message to a Telegram bot and get an instant RED / AMBER / GREEN verdict, tuned for scam patterns common in Singapore and India. A four-stage pipeline (regex pre-filter \u2192 Claude Haiku triage \u2192 Claude Sonnet full analysis \u2192 structured verdict) runs self-hosted on n8n with Supabase logging. Built around an asymmetry rule: a false \u2018safe\u2019 verdict is the only unacceptable failure, so the system is deliberately biased to over-flag. Ships with a 25-sample labelled eval harness that outputs a confusion matrix and fails the build on any false-GREEN. In progress: live family pilot with published results.", tags:["Claude API","n8n","Supabase","Telegram","Eval-Driven"], link:""},
+  {t:"Antigravity — 3D Graph Visualizer", s:"live", y:"2026", d:"An interactive 3D force-directed graph engine built with Three.js and custom \u2018antigravity\u2019 physics. Flip between gravity modes (zero-G, standard, inverted, radial), throw and pin nodes, and tune repulsion, spring tension and damping live while it holds 60 FPS. Loads real-world datasets \u2014 open-source dependency risk, global airport routes, supply-chain disruption, disease comorbidity, subreddit ecosystems \u2014 or import custom JSON and live APIs.", tags:["Three.js","WebGL","3D Physics","Data Viz","Built w/ Antigravity"], link:"https://krhns8666-bot.github.io/Karan-Portfolio/antigravity-graph/index.html"},
   {t:"Scam Atlas — APAC Scam Intelligence Platform", s:"live", y:"2026", d:"A live scam-intelligence platform covering Asia-Pacific: what scams are hitting real people right now, and how to see them coming. A cinematic scroll-driven intro leads into country-by-country data for 8 APAC markets (Singapore, India, Japan, Australia, South Korea, Malaysia, Thailand, New Zealand), sourced entirely from official police, CERT and anti-scam-centre publications. A draggable 3D globe drives a live threat radar with hotspot rankings and scam-mix analytics, alongside an in-browser checker that scores any pasted SMS or email against known fraud markers instantly.", tags:["Concept & Build","Data Research","3D Globe","APAC","Kai Chen Cyber"], link:"https://scamatlas.kimi.page/?v=2"},
   {t:"Kai Cyber — The Six Problems", s:"live", y:"2026", d:"An essay-driven security site arguing that every breach traces back to six permanent problems: trust, identity, human error, asymmetry, economics and complexity. Six real case files, an animated breach-cascade demo showing one reused password compromising 24 systems, a Phish Lab test and a live APAC Scam Watch. One file, no dependencies.", tags:["HTML/JS","Interactive","Editorial","APAC"], link:"https://krhns8666-bot.github.io/Cyber-Security-2050/"},
   {t:"Prism — Multi-Source News Hub", s:"live", y:"2026", d:"A holistic news reader that pulls any RSS, Reddit or YouTube feed into one filtered stream, groups stories by source and country, and compares how outlets cover the same event. Includes a spoken briefing mode for hands-free catch-up.", tags:["Web App","RSS","Coverage Compare","TTS"], link:"https://krhns8666-bot.github.io/Prism-News/"},
   {t:"KaranOS", s:"building", y:"2026", d:"Personal operating system on n8n — four modules covering job pipeline, content production, digital products and CISM study. Claude API in the loop for drafting and triage.", tags:["n8n","Claude API","Automation"], link:""},
   {t:"Content Factory", s:"live", y:"2026", d:"Telegram-triggered pipeline that turns a one-line prompt into a scripted, voiced and captioned short. Cuts production from hours to minutes.", tags:["n8n","Telegram","Claude API"], link:""},
   {t:"AI Studio Experiments", s:"ongoing", y:"2026", d:"A running set of Google AI Studio builds — prompt-driven prototypes and small tools used to test what generative workflows can actually carry in production.", tags:["Google AI Studio","Gemini","Prototyping"], link:""},
-  {t:"Suno Music", s:"live", y:"2026", d:"Original music written and produced with Suno, then distributed through DistroKid to Spotify and Apple Music.", tags:["Suno","DistroKid","Audio"], link:""},
-  {t:"Job Search Engine", s:"live", y:"2026", d:"Claude Code workflow with custom commands for scanning roles, analysing fit, tailoring the resume, writing outreach and tracking follow-ups against a live pipeline.", tags:["Claude Code","Node.js","docx"], link:""},
-  {t:"Resume System", s:"live", y:"2026", d:"Programmatic resume generator in Node.js and docx — navy, teal and gold, two pages, regenerated per application from a single master profile.", tags:["Node.js","docx","Design"], link:""}
+  {t:"Suno Music", s:"live", y:"2026", d:"Original music written and produced with Suno, then distributed through DistroKid to Spotify and Apple Music.", tags:["Suno","DistroKid","Audio"], link:""}
 ];
 const PALETTE=['#00D3E0','#B4FF3A','#FF4D8D','#FFC700','#8B5CF6','#FF6B35'];
-const grid=document.getElementById('grid');
-grid.innerHTML=PROJECTS.map((p,i)=>{
+function cardHtml(p,i){
   const acc=PALETTE[i%PALETTE.length];
   let links=p.links||(p.link?[{label:'VIEW',url:p.link}]:[]);
   const linkHtml=links.length?`<div class="links">${links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label} →</a>`).join('')}</div>`:'';
@@ -321,7 +337,19 @@ grid.innerHTML=PROJECTS.map((p,i)=>{
     <div class="card-top"><span class="card-year">${p.y}</span><span class="status ${p.s}">${p.s.toUpperCase()}</span></div>
     <h3>${p.t}</h3><p>${p.d}</p>${linkHtml}
     <div class="tags">${p.tags.map(t=>`<span class="t">${t}</span>`).join('')}</div>
-  </article>`;}).join('');
+  </article>`;
+}
+const LIVE = PROJECTS.filter(p=>p.s!=='building');
+const BUILDING = PROJECTS.filter(p=>p.s==='building');
+document.getElementById('grid-live').innerHTML = LIVE.map((p,i)=>cardHtml(p,i)).join('');
+document.getElementById('grid-building').innerHTML = BUILDING.map((p,i)=>cardHtml(p,i)).join('');
+document.getElementById('cnt-live').textContent = '('+LIVE.length+')';
+document.getElementById('cnt-building').textContent = '('+BUILDING.length+')';
+const buildingSection = document.getElementById('grid-building').closest('section');
+if(BUILDING.length===0){
+  document.querySelectorAll('.subhead')[1].style.display='none';
+  document.getElementById('grid-building').style.display='none';
+}
 
 (function(){const m=document.getElementById('mq');m.innerHTML=m.innerHTML.repeat(4);})();
 
